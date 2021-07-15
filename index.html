@@ -4,9 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicial</title>
+    <title>Bankline</title>
+    <meta name="description" content="Simgle page basic server optimized for speed and PWA">
+    <!-- Above the fold styles -->
+    <style></style>
+    <!-- Non blocking styles -->
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    
+    <!-- PWA stuff -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="white">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Non blocking font -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Signika:wght@300&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Signika:wght@300&display=swap"></noscript>
+    <link href="crop_square.svg" rel="shortcut icon" type="image/x-icon">
 </head>
 <body>
+
+    <header>
+        <p> Banco Fontineli </p>
+    </header>
+    <div class="container">
+        <h1> Formulário de cadastro </h1>
+
+        <section class ="wrapper">
+            <div class ="name">
+                <label for="name"><b>Nome</b></label>
+                <input placeholder="Digite seu nome" name="nome" class="required">
+            </div>
+            <div class ="email">
+                <label for="email"><b>Email</b></label>
+                <input placeholder="Digite seu email" name="email" class="required">
+            </div>
+            <div>
+                <label for="cpf"><b>CPF</b> <span>inválido</span></label>
+                <input onkeydown="cpfMask()" maxlength="14" placeholder="Digite seu cpf" id="cpf"class="required">
+            </div>
+            <div>
+                <label for="celular"><b>Telefone celular</b></label>
+                <input onkeydown="phoneMask()" placeholder="Digite número do celular" maxlength="15"id="celular" class="required">
+            </div>
+            <div>
+                <button onclick="return validate()" type="submit">Enviar</button>
+
+            </div>
+
+        </section>
+    </div>
+    <footer>
+        <p>Direitos reservados a Gabriel Fontineli</p>
+    </footer>
     
+<!-- Assync scripts -->
+<script type="text/javascript" src="script.js" async></script>
 </body>
 </html>
