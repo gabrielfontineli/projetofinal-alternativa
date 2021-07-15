@@ -7,7 +7,7 @@
 }
 
 body {
-    background-image: linear-gradient(180deg, #ff9051, #ff6737);
+    background-image: linear-gradient(180deg, #517fff, #2a4590);
     background-color:#ff6737;
     background-repeat: no-repeat;
     padding: 0;
@@ -27,7 +27,7 @@ header {
 }
 
 header p {
-    color: #ffe512;
+    color: white;
     
     font-size: 34px;
 }
@@ -75,7 +75,7 @@ input:-webkit-autofill {
     flex:1 1 100%;
 }
 div{
-    flex: 1 1 30%;
+    flex: 1 1 100%;
     margin:5px;
 }
 
