@@ -74,3 +74,6 @@ footer p {
     font-size: 15px;
     vertical-align: middle;
 }
+td{
+    text-align: center;
+}
