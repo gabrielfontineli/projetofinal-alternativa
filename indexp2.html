@@ -35,53 +35,105 @@
         <p> Guilda Java </p>
     </header>
     <div class="container">
+
         <h1> Dados Cadastrados</h1>
 
-
-
-
         <table>
-            <div class="tabela">
+
+            <thead>
                 <tr>
-                <th> <div class="name">
-                        <b>Nome</b>
-                    </div></th>
-                
-                <th> <div class="cpf">
-                        <b>CPF</b>
-                    </div></th>
-                
-                    <th> <div class="contato">
-                        <b>Contato</b>
-
-                    </div> </th>
-               
-                    <th> <div class="email">
-                        <b>Email</b>
-                    </div></th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">email</th>
+                    <th scope="col">telefone</th>
+                    <th scope="col">cpf</th>
+                    <th scope="col">acessar conta</th>
                 </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <strong class="nome">Gabriel Fontineli </strong>
+                    </td>
+                    <td class="email">gabriel0fontineli@gmail.com</td>
+                    <td class="telefone">84 988001207</td>
+                    <td class="cpf">01715051408</td>
+                    <td id="0" class="conta">codigo 0</td>
 
-                <td>Roberto Carlos</td>
-                <td>Roberto Carlos</td>
-                <td>Roberto Carlos</td>
-                <td>Roberto Carlos</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong class="nome">Francisco da Silva</strong>
+                    </td>
+                    <td class="email">fran.silva@outlook.com</td>
+                    <td class="telefone">33 980911299</td>
+                    <td class="cpf">22312356767 </td>
+                    <td class="conta">codigo x</td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <strong class="nome">Eduardo Gomes</strong>
+                    </td>
+                    <td class="email">edugomes.sim@gmail.com</td>
+                    <td class="telefone">84988082098</td>
+                    <td class="cpf">3456436723623</td>
+                    <td class="conta">codigo x</td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <strong class="nome">Luan Pereira</strong>
+                    </td>
+                    <td class="email">lupe@gmail.com</td>
+                    <td class="telefone">849808409845</td>
+                    <td class="cpf">232872102370</td>
+                    <td class="conta">codigo x</td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <strong class="nome">Luan Pereira</strong>
+                    </td>
+                    <td class="email">lupe@gmail.com</td>
+                    <td class="telefone">849808409845</td>
+                    <td class="cpf">232872102370</td>
+                    <td class="conta">codigo x</td>
+
+                </tr>
                 
-
-            </div>
+            </tbody>
         </table>
 
-
-
-
-
-
+        <table id ="conta">
+            <thead>
+                <tr>
+                    <th scope="col" colspan="3">Nome</th>
+                </tr>
+            </thead>
+            <tr class="conta-num">
+                <td colspan="2">Conta</td>
+                <td>199830</td>
+            </tr>
+            <tr class="text-offset">
+                <td colspan="2">Tipo</td>
+                <td>Poupanca</td>
+            </tr>
+            <tr>
+                <td colspan="2">Agencia</td>
+                <td>1223</td>
+            </tr>
+            <tr>
+                <td colspan="2">Saldo</td>
+                <td>R$0.000.000</td>
+            </tr>
+        </table>
     </div>
     <footer>
         <p>Direitos reservados a Guilda Java</p>
     </footer>
 
     <!-- Assync scripts -->
-    <script type="text/javascript" src="script.js" async></script>
+    <script type="text/javascript" src="tabela.js" async></script>
 </body>
 
 </html>
