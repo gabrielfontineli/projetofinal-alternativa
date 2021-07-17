@@ -1,3 +1,4 @@
+
 *{
     margin:0;
     padding:0;
@@ -20,7 +21,7 @@ header p {
 }
 
 h1{
-    margin-top: 50px;
+  margin-top: 50px;
     text-align: center;
     padding-top:15px;
     font-size: 40px;
@@ -33,6 +34,20 @@ body{
     padding: 0;
     min-height: 100vh;
 }       
+
+.tabela {
+    display: flex;
+    flex-wrap: nowrap;
+    border:solid 2px;   
+}
+
+.tabela > div{
+    width: 100px;
+    text-align: center;
+    line-height: 50px;
+    margin: auto;
+    border-left:solid 1px; 
+}
 
 .container {
     background-color:white;
@@ -98,3 +113,5 @@ table {
   #conta{
       display: none;
   }
+}
+
