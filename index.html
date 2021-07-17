@@ -23,7 +23,6 @@
     <link href="crop_square.svg" rel="shortcut icon" type="image/x-icon">
 </head>
 <body>
-
     <header>
         <p> Guilda Java </p>
     </header>
@@ -48,8 +47,19 @@
                 <input onkeydown="phoneMask()" placeholder="Digite número do celular" maxlength="15"id="celular" class="required">
             </div>
             <div>
+                <label for="tipo"><b>Telefone celular</b></label>
+                <input onkeydown="phoneMask()" placeholder="Digite número do celular" maxlength="15"id="celular" class="required">
+            </div>
+            <div>
+                <label><b>Tipo de Conta</b> </label>
+                <select>
+                    <option value="1">poupanca</option>
+                    <option value="0">corrente</option>
+                    <option value="2">investimento</option>
+                </select>
+            </div>
+            <div>
                 <button onclick="return validate()" type="submit">Enviar</button>
-
             </div>
 
         </section>
