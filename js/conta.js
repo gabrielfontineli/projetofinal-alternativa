@@ -5,6 +5,7 @@ var xhttp = new XMLHttpRequest();
 let tipoCt = ["Conta Poupança", "Conta Corrente"];
 
 xhttp.open("GET", url, true); 
+
 xhttp.onreadystatechange = function(){
     if ( xhttp.readyState == 4 && xhttp.status == 200 ) {
         var respota = JSON.parse(xhttp.responseText)
@@ -28,18 +29,15 @@ xhttp.onreadystatechange = function(){
         	conta.appendChild(emailConta);
         	conta.appendChild(telefoneConta);
         	conta.appendChild(cpfConta);
-        	conta.appendChild(Conta);
-        	
+        	conta.appendChild(Conta);        	
 
             strongName.textContent = respota[i].titular.nome;
         	emailConta.textContent = respota[i].titular.email;
         	telefoneConta.textContent = respota[i].titular.telefone;
         	cpfConta.textContent = respota[i].titular.cpf;
         	Conta.textContent = "codigo " + respota[i].numero;
-
-            
-
-        	//titularConta.textContent = respota[i].titular.nome;
+            Conta.onclick = mostrarConta;
+            Conta.setAttribute("id", respota[i].numero);
 
         	document.getElementById('tablecad').appendChild(conta);
         }
@@ -47,3 +45,24 @@ xhttp.onreadystatechange = function(){
 }
 
 xhttp.send();
+
+function mostrarConta(){
+    //alert(this.id);
+    document.getElementById("conta").style.display = "inline-block";
+    let url = "http://localhost:8080/contas/" +this.id;
+
+    var xhttp = new XMLHttpRequest(); 
+
+    xhttp.open("GET", url, true); 
+
+    xhttp.onreadystatechange = function(){
+    if ( xhttp.readyState == 4 && xhttp.status == 200 ) {
+        var respota = JSON.parse(xhttp.responseText);        
+        document.getElementById('contausuario').innerText = respota.numero;
+        document.getElementById('tipoconta').innerText = tipoCt[respota.tipo];
+        document.getElementById('agencia').innerText = respota.agencia;
+        document.getElementById('saldo').innerText = respota.saldo;
+        }
+    }
+    xhttp.send();
+}
