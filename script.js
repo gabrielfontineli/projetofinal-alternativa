@@ -89,7 +89,8 @@ function validate() {
         }};
         var data = `{"tipo": "0","cliente":{"nome": "fgdfogp","cpf": "4503469","telefone": "(99)8659-9999","email": "dfsdlf@grn.com.br"}}`;
         var newData = JSON.parse(data);
-        newData.cliente.cpf = cpfCliente;
+        var cpfCodificado = cpfCliente.split(".")[0] + cpfCliente.split(".")[1] + cpfCliente.split(".")[2];
+        newData.cliente.cpf = cpfCodificado.split("-")[0] + cpfCodificado.split("-")[1];
         newData.tipo = tipoConta;
         newData.cliente.nome = nomeCliente;
         newData.cliente.email = emailCliente;
