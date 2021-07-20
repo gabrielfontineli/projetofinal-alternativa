@@ -2,7 +2,7 @@
 var url = "http://localhost:8080/contas";
 var xhttp = new XMLHttpRequest(); 
 
-let tipoCt = ["Conta Poupança", "Conta Corrente"];
+let tipoCt = ["Conta Corrente", "Conta Poupança", "Conta Investimentos"];
 
 xhttp.open("GET", url, true); 
 
