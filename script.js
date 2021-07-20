@@ -3,10 +3,6 @@
 var formulario = {};
 (function(formulario){
     formulario.cpf = document.getElementById('cpf');
-    formulario.bairro = document.getElementById('bairro');
-    formulario.endereco = document.getElementById('endereco')
-    formulario.cidade = document.getElementById('cidade');
-    formulario.estado = document.getElementById('estado');
     formulario.celular = document.getElementById('celular');
     formulario.required = document.querySelectorAll(".required");
     formulario.invalidElement = document.querySelector("span");
@@ -97,57 +93,9 @@ function validate() {
         newData.cliente.telefone = telefoneCliente;
         console.log(JSON.stringify(newData));
         xhttp.send(JSON.stringify(newData));
-
-
-
-       
-
-        
-
     }
-    return true
+    return true;
 }
-function clearCepInputs() {
-    formulario.endereco.value = ("");
-    formulario.bairro.value = ("");
-    formulario.cidade.value = ("");
-    dformulario.estado.value = ("");
-}
-
-function retrievingCepInputs(cepInputs) {
-    if ('erro' in cepInputs) {
-        clearCepInputs();
-        alert("CEP não encontrado.");
-        return;
-    }
-    formulario.endereco.value = (cepInputs.logradouro);
-    formulario.bairro.value = (cepInputs.bairro);
-    formulario.cidade.value = (cepInputs.localidade);
-    formulario.estado.value = (cepInputs.uf);
-}
-
-function searchCep(valor) {
-
-    const cep = valor.replace(/\D/g, '');
-
-    if (cep === "")  {
-        clearCepInputs(); 
-        return;
-    }
-
-    const validateCep = /^[0-9]{8}$/;
-    if (! validateCep.test(cep)) {
-        clearCepInputs();
-        alert("Formato de CEP inválido.");
-        return;
-    } 
-
-    const script = document.createElement('script');
-    script.src = 'https://viacep.com.br/ws/' + cep + '/json/?callback=retrievingCepInputs';
-    document.body.appendChild(script);
-
-};
-
 function cpfMask() {
     const length = formulario.cpf.value.length;
     if (length === 3 || length === 7)
