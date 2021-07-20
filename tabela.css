@@ -112,6 +112,7 @@ table {
   }
   #conta{
       display: none;
+      align-self: center;
   }
-}
+
 

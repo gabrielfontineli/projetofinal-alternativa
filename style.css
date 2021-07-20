@@ -118,9 +118,6 @@ select:focus{
     border: 0;
     overflow:hidden;
 }
-#conta{
-    align-self: center;
-}
 
 @media only screen and (max-width: 700px) {
     .wrapper { 
