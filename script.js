@@ -67,7 +67,43 @@ function validate() {
         );
         return false
     }
-    else if (cpfIsValid && inputIsValid) window.alert("Parabéns!! você foi cadastrado com sucesso")
+    else if (cpfIsValid && inputIsValid) {
+        let urlc = "http://localhost:8080/contas/";
+        var xhttp = new XMLHttpRequest(); 
+
+        let tipoConta = document.getElementById('tipo').value;
+        let nomeCliente = document.getElementById('nome').value;
+        let cpfCliente = document.getElementById('cpf').value;
+        let telefoneCliente = document.getElementById('celular').value;
+        let emailCliente = document.getElementById('email').value;
+
+        xhttp.open("POST", urlc); 
+        xhttp.setRequestHeader("Accept", "application/json");
+        xhttp.setRequestHeader("Content-Type", "application/json");
+        xhttp.onreadystatechange = function () {
+           if (xhttp.readyState === 4) {
+                console.log(xhttp.status);
+                console.log(xhttp.responseText);
+                if(xhttp.status == 201) window.alert("Parabéns!! você foi cadastrado com sucesso");
+                else{ window.alert("Oops, algo deu errado"); }
+        }};
+        var data = `{"tipo": "0","cliente":{"nome": "fgdfogp","cpf": "4503469","telefone": "(99)8659-9999","email": "dfsdlf@grn.com.br"}}`;
+        var newData = JSON.parse(data);
+        newData.cliente.cpf = cpfCliente;
+        newData.tipo = tipoConta;
+        newData.cliente.nome = nomeCliente;
+        newData.cliente.email = emailCliente;
+        newData.cliente.telefone = telefoneCliente;
+        console.log(JSON.stringify(newData));
+        xhttp.send(JSON.stringify(newData));
+
+
+
+       
+
+        
+
+    }
     return true
 }
 function clearCepInputs() {
