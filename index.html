@@ -32,11 +32,11 @@
         <section class ="wrapper">
             <div class ="name">
                 <label for="name"><b>Nome</b></label>
-                <input placeholder="Digite seu nome" name="nome" class="required">
+                <input placeholder="Digite seu nome" name="nome" id="nome" class="required">
             </div>
             <div class ="email">
                 <label for="email"><b>Email</b></label>
-                <input placeholder="Digite seu email" name="email" class="required">
+                <input placeholder="Digite seu email" name="email" id="email" class="required">
             </div>
             <div>
                 <label for="cpf"><b>CPF</b> <span>inválido</span></label>
@@ -46,13 +46,10 @@
                 <label for="celular"><b>Telefone celular</b></label>
                 <input onkeydown="phoneMask()" placeholder="Digite número do celular" maxlength="15"id="celular" class="required">
             </div>
-            <div>
-                <label for="tipo"><b>Telefone celular</b></label>
-                <input onkeydown="phoneMask()" placeholder="Digite número do celular" maxlength="15"id="celular" class="required">
-            </div>
+            
             <div>
                 <label><b>Tipo de Conta</b> </label>
-                <select>
+                <select id="tipo">
                     <option value="1">poupanca</option>
                     <option value="0">corrente</option>
                     <option value="2">investimento</option>
@@ -69,6 +66,7 @@
     </footer>
     
 <!-- Assync scripts -->
+
 <script type="text/javascript" src="script.js" async></script>
 </body>
 </html>
